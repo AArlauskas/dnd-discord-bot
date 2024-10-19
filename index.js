@@ -5,6 +5,7 @@ const Discord = require('discord.js');
 const Client = require('./client/Client');
 const config = require('./config.json');
 const {Player} = require('discord-player');
+const {initializePlaylists, CurrentPlaylists, printPlaylists} = require('./utils/playlist');
 
 const client = new Client();
 client.commands = new Discord.Collection();
@@ -19,6 +20,13 @@ for (const file of commandFiles) {
 console.log(client.commands);
 
 const player = new Player(client);
+
+console.log('Initilizing playlists...');
+initializePlaylists();
+setTimeout(() => {
+    console.log('Playlists initialized!');
+    console.log('Current playlists:', printPlaylists());
+}, 3000);
 
 player.extractors.loadDefault().then(r => console.log('Extractors loaded successfully'));
 
@@ -116,6 +124,7 @@ client.on('messageCreate', async message => {
 });
 
 client.on('interactionCreate', async interaction => {
+    if (!interaction.isCommand()) return;
     const command = client.commands.get(interaction.commandName.toLowerCase());
 
     try {

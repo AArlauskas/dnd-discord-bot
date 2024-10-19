@@ -1,4 +1,12 @@
-# Discord Music bot
+# Fork of Discord Music bot
+
+Fork of Gabriel Tanner's Discord Music Bot. This fork is intended to be used for a private server and will be modified to suit the needs of the server.
+
+## Added Features
+
+-   Support for Preconfigured Playlists
+-   `/playlist` command to list play a specific playlist from the preconfigured playlists
+-   `/control` command to control the bot from the chat and have UI like controls for managing playlist playback
 
 A simple discord bot that helps you manage your server by providing useful commands like playing music or deleting text messages.
 
@@ -6,21 +14,21 @@ You can find the tutorial about building a discord music bot [here](https://gabr
 
 ## Table of content
 
-* [Requirements](#requirements)
-* [Getting started](#getting-started)
-* [Docker](#docker)
-* [Features & Commands](#features--commands)
-* [Common errors](#common-errors)
-* [Contributing](#contributing)
-* [Author](#author)
-* [License](#license)
+-   [Requirements](#requirements)
+-   [Getting started](#getting-started)
+-   [Docker](#docker)
+-   [Features & Commands](#features--commands)
+-   [Common errors](#common-errors)
+-   [Contributing](#contributing)
+-   [Author](#author)
+-   [License](#license)
 
 ## Requirements
 
-- [Node](https://nodejs.org/en/) - Version 16 or higher
-- [NPM](https://www.npmjs.com/)
-- [FFMPEG](https://www.ffmpeg.org/)
-- [Docker](https://www.docker.com/) (optional)
+-   [Node](https://nodejs.org/en/) - Version 16 or higher
+-   [NPM](https://www.npmjs.com/)
+-   [FFMPEG](https://www.ffmpeg.org/)
+-   [Docker](https://www.docker.com/) (optional)
 
 ## Getting started
 
@@ -65,7 +73,6 @@ After cloning the project and installing all dependencies, you need to add your 
 
 You can change the status of your discord bot by editing the `activity` and `activityType` variables inside the `config.json` file. `activityType` needs to be set to an integer with the following [options](https://discord-api-types.dev/api/discord-api-types-v10/enum/ActivityType).
 
-
 ### Starting the application
 
 ```bash
@@ -108,23 +115,37 @@ Only `:latest` tag is supported, otherwise use SHA256 from https://github.com/Ta
 
 > Note: The repository now uses the new Discord slash commands
 
-* [Play](#play)
-* [Pause](#pause)
-* [Resume](#resume)
-* [Now Playing](#now-playing)
-* [Queue](#queue)
-* [Shuffle](#shuffle)
-* [Loop](#loop)
-* [Skip](#skip)
-* [Remove](#remove)
-* [Move](#move)
-* [Swap](#swap)
-* [Stop](#stop)
-* [Volume](#volume)
-* [Help](#help)
-* [Userinfo](#userinfo)
-* [Ban](#ban)
-* [Purge](#purge)
+-   [Playlist] (#playlist)
+-   [Control] (#control)
+-   [Play](#play)
+-   [Pause](#pause)
+-   [Resume](#resume)
+-   [Now Playing](#now-playing)
+-   [Queue](#queue)
+-   [Shuffle](#shuffle)
+-   [Loop](#loop)
+-   [Skip](#skip)
+-   [Remove](#remove)
+-   [Move](#move)
+-   [Swap](#swap)
+-   [Stop](#stop)
+-   [Volume](#volume)
+-   [Help](#help)
+-   [Userinfo](#userinfo)
+-   [Ban](#ban)
+-   [Purge](#purge)
+
+### Playlist
+
+▶️ Play a preconfigured playlist
+
+`/playlist PLAYLIST_NAME`
+
+### Control
+
+🎛️ Control the bot from the chat
+
+`/control`
 
 ### Play
 
@@ -220,15 +241,15 @@ Only `:latest` tag is supported, otherwise use SHA256 from https://github.com/Ta
 
 ### Userinfo
 
-* Get information about a user (/userinfo USER)
+-   Get information about a user (/userinfo USER)
 
 ### Ban
 
-* Ban a player (/ban USER)
+-   Ban a player (/ban USER)
 
 ### Purge
 
-* Delete the latest chat messages (/purge NUM_OF_MESSAGES)
+-   Delete the latest chat messages (/purge NUM_OF_MESSAGES)
 
 ## Common errors
 
@@ -253,6 +274,7 @@ You are welcome to contribute by submitting a Pull Request to the repository.
 ## Author
 
 [Gabriel Tanner](https://gabrieltanner.org/)
+[Aurimas Arlauskas](https://github.com/AArlauskas/)
 
 ## Support me
 
